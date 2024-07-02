@@ -17,8 +17,10 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Install Databricks cli
-        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - name: Install Requirements
+        run: | 
+          pip install requests
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
 
       - name: Run project creation script
         env:
