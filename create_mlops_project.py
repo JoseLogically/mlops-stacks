@@ -59,20 +59,20 @@ def create_mlops_project(settings_path):
     # Initialize new MLOps project
     init_command = f"""
     databricks bundle init mlops-stacks \
-      --input_project_name="{project_name}" \
-      --input_cloud="{cloud_provider}" \
-      --input_cicd_platform="{cicd_platform}" \
-      --input_databricks_staging_workspace_host="{staging_workspace}" \
-      --input_databricks_prod_workspace_host="{prod_workspace}" \
-      --input_default_branch="{default_branch}" \
-      --input_release_branch="{release_branch}" \
-      --input_root_dir="{root_dir}" \
-      --input_read_user_group="{read_user_group}" \
-      --input_include_models_in_unity_catalog="{include_models_in_unity_catalog}" \
-      --input_schema_name="{schema_name}" \
-      --input_unity_catalog_read_user_group="{unity_catalog_read_user_group}" \
-      --input_include_feature_store="{include_feature_store}" \
-      --input_include_mlflow_recipes="{include_mlflow_recipes}"
+      --var=project_name="{project_name}" \
+      --var=cloud="{cloud_provider}" \
+      --var=cicd_platform="{cicd_platform}" \
+      --var=databricks_staging_workspace_host="{staging_workspace}" \
+      --var=databricks_prod_workspace_host="{prod_workspace}" \
+      --var=default_branch="{default_branch}" \
+      --var=release_branch="{release_branch}" \
+      --var=root_dir="{root_dir}" \
+      --var=read_user_group="{read_user_group}" \
+      --var=include_models_in_unity_catalog="{include_models_in_unity_catalog}" \
+      --var=schema_name="{schema_name}" \
+      --var=unity_catalog_read_user_group="{unity_catalog_read_user_group}" \
+      --var=include_feature_store="{include_feature_store}" \
+      --var=include_mlflow_recipes="{include_mlflow_recipes}"
     """
     run_command(init_command)
 
